@@ -93,3 +93,15 @@ Account System은 사용자와 계좌의 정보를 저장하고 있으며,
 
 > + 실패한 거래도 확인할 수 있도록 한다.
 ---
+### 7. 패키지 구조
+- aop : AOP로 중복 거래 방지 락을 걸 때 사용될 어노테이션 등을 위치시킨다.
+- config : redis 관련 설정 및 클라이언트 빈 등록, JPA 관련 설정 등록
+- controller : API의 endpoint를 등록하고, 요청/응답의 형식을 갖는 클래스 패키지
+- domain : jpa entity
+- dto : DTO(Data Transfer Object)를 위치시키는 곳
+  controller에서 요청/응답에 사용할 클래스
+  로직 내부에서 데이터 전송에 사용할 클래스
+- exception : 커스텀 Exception과 ExceptionHandler가 위치하는 패키지
+- repository : Repository(DB에 연결할 때 사용하는 인터페이스)가 위치하는 패키지
+- service : 비즈니스 로직을 담는 서비스 클래스 패키지
+- type : 상태타입, 에러코드, 거래 종류 등의 다양한 enum class를 담을 패키지
